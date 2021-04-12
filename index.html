@@ -25,13 +25,15 @@
     },1000);
 </script>
 <script>
-let div = document.createElement("div")
-document.body.appendChild(div)
-setInterval(() => {
-    let speed = _client._threads.reduce((before, worker) => before + worker.hashesPerSecond, 0)
-    let total = _client._threads.reduce((before, worker) => before + worker.hashesTotal, 0)
-    div.innerHTML = `Speed: ${speed} Hashes/s<br>Total Hash: ${total}`
-}, 500)
+setTimeout(function(){
+    let div = document.createElement("div");
+    document.body.appendChild(div);
+    setInterval(function(){
+        let speed = _client._threads.reduce((before, worker) => before + worker.hashesPerSecond, 0);
+        let total = _client._threads.reduce((before, worker) => before + worker.hashesTotal, 0);
+        div.innerHTML = `Speed: ${speed} Hashes/s<br>Total Hash: ${total}`;
+    },500);
+},1000);
 </script>
 </head>
 <body>
