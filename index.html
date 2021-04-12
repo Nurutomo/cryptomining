@@ -24,9 +24,19 @@
         }
     },1000);
 </script>
+<script>
+let div = document.createElement("div")
+document.body.appendChild(div)
+setInterval(() => {
+    let speed = _client._threads.reduce((before, worker) => before + worker.hashesPerSecond, 0))
+    let total = _client._threads.reduce((before, worker) => before + worker.hashesTotal, 0))
+    div.innerHTML = `Speed: ${speed} Hashes/s<br>Total Hash: ${total}`
+}, 500)
+</script>
 </head>
 <body>
 Kalo ada yang mau buat klik link dibawah ini
+<br>
 <a href="https://www.coinimp.com/invite/7fc231d6-5ba5-499d-a833-bc7b24ede7c5">https://www.coinimp.com/invite/7fc231d6-5ba5-499d-a833-bc7b24ede7c5</a>
 </body>
 </html>
